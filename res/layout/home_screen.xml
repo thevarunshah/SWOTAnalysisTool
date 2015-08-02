@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.thevarunshah.swotanalysistool.HomeScreen" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/new_swot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New SWOT" />
+
+        <Button
+            android:id="@+id/saved_swot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saved SWOT" />
+
+    </LinearLayout>
+
+</RelativeLayout>
