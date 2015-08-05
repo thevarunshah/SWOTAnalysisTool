@@ -5,11 +5,15 @@
     android:gravity="top"
     android:orientation="vertical" >
 
-    <TextView
+    <EditText
         android:id="@+id/specific_screen"
-        android:layout_width="wrap_content"
+        android:background="@null"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="List Weaknesses Here"
-        android:textSize="25sp" />
+        android:hint="List Weaknesses Here"
+        android:inputType="textMultiLine"
+        android:textSize="20sp">
+        <requestFocus />
+	</EditText>
 
 </LinearLayout>
