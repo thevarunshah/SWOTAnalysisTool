@@ -9,6 +9,8 @@ import android.view.Window;
 import android.widget.Button;
 
 import com.example.swotanalysistool.R;
+import com.thevarunshah.swotanalysistool.backend.SWOTObject;
+import com.thevarunshah.swotanalysistool.backend.Database;
 
 
 public class HomeScreen extends Activity implements OnClickListener{
@@ -30,7 +32,12 @@ public class HomeScreen extends Activity implements OnClickListener{
     	
     	switch(v.getId()){
     		case R.id.new_swot:{
+    			SWOTObject so = new SWOTObject(Database.getId());
+    			Database.getSWOTs().put(so.getId(), so);
+    			Bundle extra = new Bundle();
+    			extra.putInt("objectId", so.getId());
     			Intent i = new Intent(HomeScreen.this, NewSWOTScreen.class);
+    			i.putExtra("bundle", extra);
 				startActivity(i);
     			break;
     		}

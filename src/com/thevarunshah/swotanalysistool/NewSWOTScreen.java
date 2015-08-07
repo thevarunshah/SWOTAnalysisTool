@@ -5,12 +5,18 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 
 import com.example.swotanalysistool.R;
+import com.thevarunshah.swotanalysistool.backend.Database;
+import com.thevarunshah.swotanalysistool.backend.SWOTObject;
 
 public class NewSWOTScreen extends FragmentActivity{
 
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        int swotId = getIntent().getBundleExtra("bundle").getInt("objectId");
+        SWOTObject so = Database.getSWOTs().get(swotId);
+        
         setUpView();
         setUpFragment();
     }
