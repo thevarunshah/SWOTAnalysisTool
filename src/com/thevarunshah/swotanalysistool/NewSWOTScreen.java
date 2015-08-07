@@ -16,6 +16,7 @@ public class NewSWOTScreen extends FragmentActivity{
         
         int swotId = getIntent().getBundleExtra("bundle").getInt("objectId");
         SWOTObject so = Database.getSWOTs().get(swotId);
+        Database.setCurrentSWOT(so);
         
         setUpView();
         setUpFragment();
