@@ -1,6 +1,5 @@
 package com.thevarunshah.swotanalysistool.backend;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Database {

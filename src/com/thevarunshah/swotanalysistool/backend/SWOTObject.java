@@ -12,7 +12,7 @@ public class SWOTObject {
 	public SWOTObject(int id){
 		
 		this.id = id;
-		this.name = "";
+		this.name = "SWOT " + Integer.toString(id-100);
 		this.strengths = "";
 		this.weaknesses = "";
 		this.opportunities = "";

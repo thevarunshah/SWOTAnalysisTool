@@ -7,12 +7,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.swotanalysistool.R;
 import com.thevarunshah.swotanalysistool.backend.Database;
 import com.thevarunshah.swotanalysistool.backend.SWOTObject;
 
-public class NewSWOTScreen extends FragmentActivity implements OnClickListener{
+public class SWOTScreen extends FragmentActivity implements OnClickListener{
 
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class NewSWOTScreen extends FragmentActivity implements OnClickListener{
     		case R.id.swot_save:{
     			String title = ((EditText) findViewById(R.id.swot_title)).getText().toString();
     			Database.getCurrentSWOT().setName(title);
+    			Toast.makeText(getApplicationContext(), "Saved!", Toast.LENGTH_SHORT).show();
     		}
     	}
     }

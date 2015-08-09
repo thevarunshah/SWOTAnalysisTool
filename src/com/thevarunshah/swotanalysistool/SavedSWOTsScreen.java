@@ -10,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.swotanalysistool.R;
 import com.thevarunshah.swotanalysistool.backend.Database;
@@ -23,6 +22,12 @@ public class SavedSWOTsScreen extends Activity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.saved_swots);
+	}
+	
+	@Override
+	protected void onResume(){
+		
+		super.onResume();
 
 		final ListView swotLV = (ListView) findViewById(R.id.swots_list);
 		final ArrayList<SWOTObject> swotList = new ArrayList<SWOTObject>();
@@ -37,18 +42,16 @@ public class SavedSWOTsScreen extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-				int itemPosition = position;
 				SWOTObject so = (SWOTObject) swotLV.getItemAtPosition(position);
 
 				Database.getSWOTs().put(so.getId(), so);
     			Bundle extra = new Bundle();
     			extra.putInt("objectId", so.getId());
-    			Intent i = new Intent(SavedSWOTsScreen.this, NewSWOTScreen.class);
+    			Intent i = new Intent(SavedSWOTsScreen.this, SWOTScreen.class);
     			i.putExtra("bundle", extra);
 				startActivity(i);
 			}
 
 		}); 
-
 	}
 }

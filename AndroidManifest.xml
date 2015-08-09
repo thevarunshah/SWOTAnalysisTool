@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.thevarunshah.swotanalysistool.NewSWOTScreen"
+            android:name="com.thevarunshah.swotanalysistool.SWOTScreen"
             android:label="@string/app_name" >
         </activity>
         <activity

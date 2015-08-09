@@ -36,7 +36,7 @@ public class HomeScreen extends Activity implements OnClickListener{
     			Database.getSWOTs().put(so.getId(), so);
     			Bundle extra = new Bundle();
     			extra.putInt("objectId", so.getId());
-    			Intent i = new Intent(HomeScreen.this, NewSWOTScreen.class);
+    			Intent i = new Intent(HomeScreen.this, SWOTScreen.class);
     			i.putExtra("bundle", extra);
 				startActivity(i);
     			break;
