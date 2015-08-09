@@ -42,7 +42,8 @@ public class HomeScreen extends Activity implements OnClickListener{
     			break;
     		}
     		case R.id.saved_swot:{
-    			//do something
+    			Intent i = new Intent(HomeScreen.this, SavedSWOTsScreen.class);
+    			startActivity(i);
     			break;
     		}
     	}

@@ -19,6 +19,11 @@ public class SWOTObject {
 		this.threats = "";
 	}
 	
+	@Override
+	public String toString(){
+		return this.name;
+	}
+	
 	public int getId(){
 		return id;
 	}

@@ -26,6 +26,10 @@
             android:name="com.thevarunshah.swotanalysistool.NewSWOTScreen"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.thevarunshah.swotanalysistool.SavedSWOTsScreen"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>
