@@ -1,8 +1,6 @@
 package com.thevarunshah.swotanalysistool;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectOutputStream;
 
 import android.os.Bundle;
@@ -14,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.swotanalysistool.R;
 import com.thevarunshah.swotanalysistool.backend.Database;
 import com.thevarunshah.swotanalysistool.backend.SWOTObject;
 

@@ -12,7 +12,6 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 
-import com.example.swotanalysistool.R;
 import com.thevarunshah.swotanalysistool.backend.Database;
 import com.thevarunshah.swotanalysistool.backend.SWOTObject;
 

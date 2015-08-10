@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-import com.example.swotanalysistool.R;
 import com.thevarunshah.swotanalysistool.backend.Database;
 import com.thevarunshah.swotanalysistool.backend.SWOTObject;
 
