@@ -1,7 +1,10 @@
 package com.thevarunshah.swotanalysistool.backend;
 
-public class SWOTObject {
+import java.io.Serializable;
+
+public class SWOTObject implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String name;
 	private String strengths;

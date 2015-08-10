@@ -1,5 +1,10 @@
 package com.thevarunshah.swotanalysistool;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
@@ -55,5 +60,28 @@ public class SWOTScreen extends FragmentActivity implements OnClickListener{
     			Toast.makeText(getApplicationContext(), "Saved!", Toast.LENGTH_SHORT).show();
     		}
     	}
+    }
+    
+    @Override
+    public void onPause(){
+    	super.onPause();
+    	
+    	FileOutputStream fos = null;
+		ObjectOutputStream oos = null;
+    	try {
+			fos = openFileOutput("swot_backup.ser", MODE_PRIVATE);
+			oos = new ObjectOutputStream(fos);
+			oos.writeInt(Database.getId());
+			oos.writeObject(Database.getSWOTs());
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally{
+			try{
+				oos.close();
+				fos.close();
+			} catch (Exception e){
+				e.printStackTrace();
+			}
+		}
     }
 }

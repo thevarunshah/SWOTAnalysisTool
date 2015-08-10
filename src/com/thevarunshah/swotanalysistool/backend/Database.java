@@ -9,7 +9,6 @@ public class Database {
 	private static SWOTObject currentSWOT = null;
 	
 	public static int getId(){
-		id++;
 		return id;
 	}
 
@@ -23,6 +22,14 @@ public class Database {
 
 	public static void setCurrentSWOT(SWOTObject currentSWOT) {
 		Database.currentSWOT = currentSWOT;
+	}
+
+	public static void setId(int id) {
+		Database.id = id;
+	}
+
+	public static void setSWOTs(HashMap<Integer, SWOTObject> sWOTs) {
+		SWOTs = sWOTs;
 	}
 
 }
