@@ -3,6 +3,7 @@ package com.thevarunshah.swotanalysistool;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -38,6 +39,7 @@ public class SavedSWOTsScreen extends Activity {
 		for(SWOTObject so : Database.getSWOTs().values()){
 			swotList.add(so);
 		}
+		Collections.sort(swotList);
 		final ArrayAdapter<SWOTObject> adapter = new ArrayAdapter<SWOTObject>(this, android.R.layout.simple_list_item_1, android.R.id.text1, swotList);
 		swotLV.setAdapter(adapter);
 

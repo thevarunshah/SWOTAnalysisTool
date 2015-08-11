@@ -2,7 +2,7 @@ package com.thevarunshah.swotanalysistool.backend;
 
 import java.io.Serializable;
 
-public class SWOTObject implements Serializable{
+public class SWOTObject implements Serializable, Comparable<SWOTObject>{
 	
 	private static final long serialVersionUID = 1L;
 	private int id;
@@ -25,6 +25,11 @@ public class SWOTObject implements Serializable{
 	@Override
 	public String toString(){
 		return this.name;
+	}
+	
+	@Override
+	public int compareTo(SWOTObject that){
+		return this.getName().toLowerCase().compareTo(that.getName().toLowerCase());
 	}
 	
 	public int getId(){
