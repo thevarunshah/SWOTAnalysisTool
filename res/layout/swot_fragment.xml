@@ -4,7 +4,7 @@
       android:layout_height="match_parent"
       android:orientation="vertical">
  
-    <com.thevarunshah.swotanalysistool.SlidingTabLayout
+    <com.thevarunshah.swotanalysistool.backend.SlidingTabLayout
           android:id="@+id/sliding_tabs"
           android:background="#ddd"
           android:layout_width="match_parent"

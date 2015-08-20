@@ -3,7 +3,7 @@ package com.thevarunshah.swotanalysistool.backend;
 import java.io.Serializable;
 
 public class SWOTObject implements Serializable, Comparable<SWOTObject>{
-	
+
 	private static final long serialVersionUID = 1L;
 	private int id;
 	private String name;
@@ -11,9 +11,9 @@ public class SWOTObject implements Serializable, Comparable<SWOTObject>{
 	private String weaknesses;
 	private String opportunities;
 	private String threats;
-	
+
 	public SWOTObject(int id){
-		
+
 		this.id = id;
 		this.name = "SWOT " + Integer.toString(id-100);
 		this.strengths = "";
@@ -21,17 +21,17 @@ public class SWOTObject implements Serializable, Comparable<SWOTObject>{
 		this.opportunities = "";
 		this.threats = "";
 	}
-	
+
 	@Override
 	public String toString(){
 		return this.name;
 	}
-	
+
 	@Override
 	public int compareTo(SWOTObject that){
 		return this.getName().toLowerCase().compareTo(that.getName().toLowerCase());
 	}
-	
+
 	public int getId(){
 		return id;
 	}

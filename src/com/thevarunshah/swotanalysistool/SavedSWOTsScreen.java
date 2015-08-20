@@ -28,10 +28,10 @@ public class SavedSWOTsScreen extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.saved_swots);
 	}
-	
+
 	@Override
 	protected void onResume(){
-		
+
 		super.onResume();
 
 		final ListView swotLV = (ListView) findViewById(R.id.swots_list);
@@ -51,22 +51,22 @@ public class SavedSWOTsScreen extends Activity {
 				SWOTObject so = (SWOTObject) swotLV.getItemAtPosition(position);
 
 				Database.getSWOTs().put(so.getId(), so);
-    			Bundle extra = new Bundle();
-    			extra.putInt("objectId", so.getId());
-    			Intent i = new Intent(SavedSWOTsScreen.this, SWOTScreen.class);
-    			i.putExtra("bundle", extra);
+				Bundle extra = new Bundle();
+				extra.putInt("objectId", so.getId());
+				Intent i = new Intent(SavedSWOTsScreen.this, SWOTScreen.class);
+				i.putExtra("bundle", extra);
 				startActivity(i);
 			}
 
 		});
-		
+
 		swotLV.setOnItemLongClickListener(new OnItemLongClickListener() {
 
 			@Override
 			public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-				
+
 				final SWOTObject so = (SWOTObject) adapter.getItem(position);
-				
+
 				new AlertDialog.Builder(adapter.getContext())
 				.setIconAttribute(android.R.attr.alertDialogIcon)
 				.setTitle("Confirm Delete")
@@ -74,15 +74,15 @@ public class SavedSWOTsScreen extends Activity {
 				.setPositiveButton("Yes", new DialogInterface.OnClickListener(){
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						
+
 						int id = so.getId();
 						adapter.remove(so);
 						adapter.notifyDataSetChanged();
-						
+
 						Database.getSWOTs().remove(id);
 						FileOutputStream fos = null;
 						ObjectOutputStream oos = null;
-				    	try {
+						try {
 							fos = openFileOutput("swot_backup.ser", MODE_PRIVATE);
 							oos = new ObjectOutputStream(fos);
 							oos.writeInt(Database.getId());
@@ -101,7 +101,7 @@ public class SavedSWOTsScreen extends Activity {
 				})
 				.setNegativeButton("No", null)
 				.show();
-				
+
 				return true;
 			}
 		});

@@ -17,14 +17,14 @@ import com.thevarunshah.swotanalysistool.backend.SWOTObject;
 
 public class HomeScreen extends Activity implements OnClickListener{
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_screen);
-        
-        FileInputStream fis = null;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.home_screen);
+
+		FileInputStream fis = null;
 		ObjectInputStream ois = null;
-        try {
+		try {
 			fis = openFileInput("swot_backup.ser");
 			ois = new ObjectInputStream(fis);
 			Database.setId(ois.readInt());
@@ -39,33 +39,33 @@ public class HomeScreen extends Activity implements OnClickListener{
 				e.printStackTrace();
 			}
 		}
-        
-        Button new_swot = (Button) findViewById(R.id.new_swot);
-        new_swot.setOnClickListener(this);
-        Button saved_swot = (Button) findViewById(R.id.saved_swot);
-        saved_swot.setOnClickListener(this);
-    }
-    
-    @Override
-    public void onClick(View v){
-    	
-    	switch(v.getId()){
-    		case R.id.new_swot:{
-    			Database.setId(Database.getId()+1);
-    			SWOTObject so = new SWOTObject(Database.getId());
-    			Database.getSWOTs().put(so.getId(), so);
-    			Bundle extra = new Bundle();
-    			extra.putInt("objectId", so.getId());
-    			Intent i = new Intent(HomeScreen.this, SWOTScreen.class);
-    			i.putExtra("bundle", extra);
-				startActivity(i);
-    			break;
-    		}
-    		case R.id.saved_swot:{
-    			Intent i = new Intent(HomeScreen.this, SavedSWOTsScreen.class);
-    			startActivity(i);
-    			break;
-    		}
-    	}
-    }
+
+		Button new_swot = (Button) findViewById(R.id.new_swot);
+		new_swot.setOnClickListener(this);
+		Button saved_swot = (Button) findViewById(R.id.saved_swot);
+		saved_swot.setOnClickListener(this);
+	}
+
+	@Override
+	public void onClick(View v){
+
+		switch(v.getId()){
+		case R.id.new_swot:{
+			Database.setId(Database.getId()+1);
+			SWOTObject so = new SWOTObject(Database.getId());
+			Database.getSWOTs().put(so.getId(), so);
+			Bundle extra = new Bundle();
+			extra.putInt("objectId", so.getId());
+			Intent i = new Intent(HomeScreen.this, SWOTScreen.class);
+			i.putExtra("bundle", extra);
+			startActivity(i);
+			break;
+		}
+		case R.id.saved_swot:{
+			Intent i = new Intent(HomeScreen.this, SavedSWOTsScreen.class);
+			startActivity(i);
+			break;
+		}
+		}
+	}
 }
