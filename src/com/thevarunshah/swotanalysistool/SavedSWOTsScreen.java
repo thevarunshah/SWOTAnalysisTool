@@ -49,8 +49,7 @@ public class SavedSWOTsScreen extends Activity {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 				SWOTObject so = (SWOTObject) swotLV.getItemAtPosition(position);
-
-				Database.getSWOTs().put(so.getId(), so);
+				
 				Bundle extra = new Bundle();
 				extra.putInt("objectId", so.getId());
 				Intent i = new Intent(SavedSWOTsScreen.this, SWOTScreen.class);
